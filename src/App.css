@@ -9,7 +9,13 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+      animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo2 {
+      animation: App-logo-spin2 infinite 21s linear;
   }
 }
 
@@ -30,9 +36,56 @@
 
 @keyframes App-logo-spin {
   from {
-    transform: rotate(0deg);
+      transform: rotate(0deg);
   }
   to {
-    transform: rotate(360deg);
+      transform: rotate(360deg);
   }
+}
+
+@keyframes App-logo-spin2 {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(-360deg);
+  }
+}
+
+.black,
+.white {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.black {
+  background-color: black;
+  color: white;
+}
+
+.white {
+  color: black;
+  background-color: white;
+}
+
+.cat {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  font-weight: bold;
+ transform: rotate(30deg); 
+}
+
+.cat span {
+  color: pink;
+  /* transform: rotate(-30deg); */
 }
