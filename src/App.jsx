@@ -1,41 +1,31 @@
-
 import './App.css';
-import Bebras from './Components/009/Bebras';
-import Lape from './Components/009/Lape';
-import Black from './Components/009/Black';
-import White from './Components/009/White';
-import rand from './Funkcijos/rand';
+import Square from './Components/010/squere';
+import Bin from './Components/010/bin';
 
-// const cats = [
-//     {name: 'Puikis', color: 'gray'},
-//     {name: 'Ufo', color: 'yellow'},
-//     {name: 'Pukis', color: 'white'}
-// ]
+
+// const squares = [
+//     {color: 'black', name: 'Valio', size: 88, show: true},
+//     {color: 'white', name: 'hik', size: 28, show: true},
+//     {color: 'red', name: 'gris', size: 100, show: true},
+//     {color: 'blue', name: 'karlius', size: 120, show: true},
+// ];
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         
-       <Lape></Lape>
-       <Bebras></Bebras> 
-        <h1>JS</h1> 
-        <Bebras></Bebras>
-        { rand(0,1) ? <Black/> : <White/>} 
-        
-      
+    
+        <h1>Props</h1> 
 
-      {/* <div className='cat' style={{backgroundColor: cats[0].color }}><span>{cats[0].name}</span></div>
-     <div className='cat' style={{backgroundColor: cats[1].color }}><span>{cats[1].name}</span></div>
-     <div className='cat' style={{backgroundColor: cats[2].color }}><span>{cats[2].name}</span></div> */}
+    <Bin color="crimson" size = '100px' />
 
 
+    {/* // [...squares].sort( (a, b) => b.size - a.size ).map((s, i) => <Square key={i} color = {s.color} name={s.name} size = {s.size} show = {s.show} />)
 
- {/* {     cats.map((cat, i) => <div key={i} className='cat' style={{backgroundColor: cat.color }}>
-      <span>{cat.name}</span>
-      </div>)} */}
-
-      </header>
+// {squares.filter( sq => sq.size < 200 ).map((s, i) => <Square key={i} color = {s.color} name={s.name} size = {s.size} show = {s.show} />)
+// } */}
+   </header>
     </div>
   ); 
 }
