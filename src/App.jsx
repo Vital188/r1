@@ -1,34 +1,30 @@
-import './App.css';
-import Square from './Components/010/squere';
-import Bin from './Components/010/bin';
+import './App.scss';
 
- const squares = [
-     {color: 'black', name: 'Valio', size: 88, show: true},
-    {color: 'white', name: 'hik', size: 28, show: true},
-     {color: 'red', name: 'gris', size: 100, show: true},
-    {color: 'blue', name: 'karlius', size: 120, show: true},
- ];
+const dogs = ['šuo', 'šunius', 'Bobikas', 'kudlius', 'Šarikas', 'avigalvis'];
+ 
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        
-    
-        <h1>Props</h1> 
+        <h1>Props</h1>
+         <div className="dog-bin">
+            {
+                dogs.map((d, i) => <div key={i} className={'dog ' + (i % 2 ? 'sq' : 'cc')} >{d}</div>)
+            } 
+        </div>
+           <div className="dog-bin">
+            {
+                dogs.map((d, i) => (d[0] === d[0].toLocaleLowerCase()) ? <div key={i} className="dog sq">{d}</div> : null)
+            }
+         </div>
 
-    <Bin color="crimson" size ={100} />
-
-    {
-    squares.filter( sq => sq.size < 200 ).map((s, i) => <Square key={i} color = {s.color} name={s.name} size = {s.size} show = {s.show} />)
-}
-
-
-    {/* /* // [...squares].sort( (a, b) => b.size - a.size ).map((s, i) => <Square key={i} color = {s.color} name={s.name} size = {s.size} show = {s.show} />) */}
-
-
- 
-   </header>
+         <div className="dog-bin">
+            {
+                dogs.map((d, i) => <div style={{color: d.length > 6 ? 'greenyellow' : 'crimson'}} key={i} className="dog sq">{d.length}</div>)
+            }
+        </div>
+      </header>
     </div>
   ); 
 }
