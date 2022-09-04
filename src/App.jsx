@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import './App.scss';
 import Squares from './Components/017/Squares';
 // import Text from './Components/017/Text';
@@ -24,6 +25,24 @@ function App() {
             </header>
         </div>
     );
+=======
+import "./App.scss";
+import Jokes from "./Components/Jokes";
+
+function App() {
+
+
+
+  
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>Ten best jokes</h1>
+        <Jokes color='red'></Jokes>
+      </header>
+    </div>
+  );
+>>>>>>> f5f0667acec1b33af31a52fe7aa89bd880ab8cf4
 }
 
 export default App;
