@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useReducer } from 'react';
 import { useState } from 'react';
 import { add, add1, rem, rem1 } from './Actions';
@@ -5,14 +6,24 @@ import './App.scss';
 import StarContext from './Components/019/StarContext';
 import countReducer from './Reducers/countReducer';
 // import Tevelis from './Components/019/Tevelis';
+import axios from 'axios'
 
 function App() {
 
-    const [star, setStar] = useState('');
-    const [plus, setPlus] = useState('');
+    const [trees, setTrees] = useState([])
 
-    const [count, countDispach] = useReducer(countReducer, 10);
-    const [number, setNumber] = useState(0);
+    useEffect (() =>  {
+        axios.get('http://localhost:3008/trees')
+        .then(res => {
+            setTrees(res.data);
+        })
+    }, [])
+
+    // const [star, setStar] = useState('');
+    // const [plus, setPlus] = useState('');
+
+    // const [count, countDispach] = useReducer(countReducer, 10);
+    // const [number, setNumber] = useState(0);
 
 
     // const add1 = () => {
@@ -45,28 +56,33 @@ function App() {
 
     return (
         <div className="App">
-            <StarContext.Provider value={
+            {/* <StarContext.Provider value={
                 {
                     star: star,
                     plus: plus,
                     setPlus,
                     setStar
                 }
-            }>
+            }> */}
             <header className="App-header">
-                <h1>CONTEX + REDUCER {count}</h1>
+                <h1>server</h1>
                 <div className="red-square">
+                    <ul>
+                    {
+                        trees.map(t => <li key={t.id}>{t.title} {t.id}</li>)
+                    }
+                    </ul>
                 {/* <button onClick={() => setStar(s => s + '*')}>Make Star</button>
                 <button onClick={() => setPlus(s => s + '+')}>Make Plus</button>
                 <Tevelis/> */}
-                <button onClick={() => countDispach(add1())}>+1</button>
+            {/* /* <button onClick={() => countDispach(add1())}>+1</button>
                 <button onClick={() => countDispach(rem1())}>-1</button>
                 <input type="number" value={number} onChange={e => setNumber(e.target.value)}></input>
                 <button onClick={() => countDispach(add(number))}>+++</button>
-                <button onClick={() => countDispach(rem(number))}>---</button>
-                </div>
+                <button onClick={() => countDispach(rem(number))}>---</button> */}
+                </div> 
             </header>
-            </StarContext.Provider>
+            {/* </StarContext.Provider> */}
         </div>
     );
 }
