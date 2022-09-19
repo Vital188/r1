@@ -93,18 +93,19 @@
 }
 
 .dog-bin {
+    width: 300px;
+    height: 300px;
+    background-color: pink;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     margin: 20px;
     .dog {
-        width: 150px;
-        height: 150px;
-        color: pink;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        
         background-color: skyblue;
         margin: 6px;
         &.cc {
@@ -314,4 +315,13 @@ input {
         font-weight: bold;
         font-family: 'Courier New', Courier, monospace;
     }
+}
+
+.dogs {
+    width: 120px;
+        height: 120px;
+        border: 1px dashed olive;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 }
