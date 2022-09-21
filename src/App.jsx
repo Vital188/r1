@@ -1,6 +1,6 @@
 import './App.scss';
-import InnerJoin from './Components/027/InnerJoin';
-import LeftJoin from './Components/027/LeftJoin';
+import InnerJoin from '../src/Components/027/InnerJoin'
+import LeftJoin from './Components/027/LeftJoin'
 import RightJoin from './Components/027/RightJoin';
 
 function App() {
